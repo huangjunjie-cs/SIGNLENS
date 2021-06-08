@@ -1,0 +1,54 @@
+.line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 2;
+    stroke-dasharray: 5, 5;
+}
+  
+.line-red {
+  stroke: #FF0000;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+
+.line-blue {
+  stroke: #00FF00;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+
+.line-green {
+  stroke: #00FF00;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+
+line.line-green:hover {
+  stroke-width: 10;
+  stroke-opacity: 1;
+}
+
+line.line:hover {
+  stroke: #999;
+  stroke-opacity: 1;
+  stroke-width: 10;
+  stroke-dasharray: 5, 5;
+}
+
+line.line-red:hover {
+stroke: #FF0000;
+stroke-width: 10;
+stroke-opacity: 1;
+}
+
+line.line-blue:hover {
+stroke: #00FF00;
+stroke-width: 10;
+stroke-opacity: 1;
+}
+
+.people-selected{
+  font-size: 100%;
+  font-weight: bold;
+  color: black;
+}

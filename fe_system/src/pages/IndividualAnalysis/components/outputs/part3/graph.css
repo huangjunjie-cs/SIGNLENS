@@ -1,0 +1,34 @@
+.line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 2;
+    stroke-dasharray: 5, 5;
+}
+  
+.line-red {
+  stroke: #FF0000;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+
+.line-blue {
+  stroke: #00FF00;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+
+.line-green {
+  stroke: #00FF00;
+  stroke-width: 2;
+  stroke-opacity: 0.6;
+}
+
+.node .selected {
+  stroke: black;
+}
+
+.node :hover{
+  stroke: yellow;
+  stroke-opacity: 0.6;
+
+}
