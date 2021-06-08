@@ -1,5 +1,9 @@
+## Data Download
 
-## Data
+You can download dataset in [kaggle dataset](https://www.kaggle.com/h12345jack/signlens/download)
+
+
+## Data Description
 The tsv data is divided by \t, and the data includes 3 parts
 
 We show the instruction for ```cbdb_edgelist.tsv```
