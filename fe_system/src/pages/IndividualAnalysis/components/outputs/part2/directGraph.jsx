@@ -6,15 +6,15 @@ import OriginGraph from './components/originGraph';
 import LinkInfo from './components/linkInfo';
 
 
-// import { getXYRelationship } from '../../../api'; 
+import { getXYRelationship } from './services'; 
 
 
 class DirectGraph extends Component {
   state = {
     x: '1762',
     y: '1384',
-    x_name: '王安石',
-    y_name: '欧阳修',
+    x_name: 'Wang Anshi',
+    y_name: 'Ouyang Xiu',
     relations: [],
     loading: false
   };
@@ -25,19 +25,20 @@ class DirectGraph extends Component {
     this.setState({
         loading: true
       }, ()=>{
-        // getXYRelationship(x, y)
-        //   .then(res=>{
-        //     const data = res.data
-        //     this.setState({
-        //       x,
-        //       y,
-        //       x_name: data.x_name,
-        //       y_name: data.y_name,
-        //       relations: data.relations
-        //     })
-        //   }).catch(err=>{
-        //     console.log(err)
-        // });
+        getXYRelationship(x, y)
+          .then(res=>{
+            const data = res;
+            console.log(res, 31);
+            this.setState({
+              x,
+              y,
+              x_name: data.X_name,
+              y_name: data.Y_name,
+              relations: data.relations
+            })
+          }).catch(err=>{
+            console.log(err)
+        });
     });
   }
 

@@ -4,7 +4,6 @@ import { Tabs, Col, Row } from 'antd';
 import TopPeople from './outputs/part1/topPeople';
 import DirectGraph from './outputs/part2/directGraph';
 import ForchGraph from './outputs/part3/forchGraph';
-import NodeInfo from './outputs/part3/nodeInfo';
 
 import { FormatMess} from 'umi'
 
@@ -355,7 +354,7 @@ class IndividualOutput extends React.Component {
   state = {
     selected_node_id: '',
     selected_people: '',
-    nodeinfo_loading: false,
+    nodeinfo_loading: true,
     nodeinfo: {},
   };
 
@@ -414,22 +413,11 @@ class IndividualOutput extends React.Component {
             />
           </TabPane>
           <TabPane tab="Group Partition" key="2" >
-            <Row gutter={10}>
-              <Col lg={16} xs={24} id="forced-graph">
                 <ForchGraph
                   links={links3}
                   handleSelctedPeople={this.handleSelectedPeople}
                   datas={link_datas}
                 />
-              </Col>
-              <Col lg={8} xs={24}>
-                <NodeInfo
-                  selected_people={this.state.selected_people}
-                  nodeinfo={this.state.nodeinfo}
-                  nodeinfo_loading={this.state.nodeinfo_loading}
-                />
-              </Col>
-            </Row>
           </TabPane>
           
         </Tabs>
