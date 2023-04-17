@@ -1,4 +1,3 @@
-[pypi-image]: https://badge.fury.io/py/torch-geometric.svg
 # SIGNLENS
 
 SIGNLENS is a tool that helps to analyze polarized social relationships based on signed graph modeling.
