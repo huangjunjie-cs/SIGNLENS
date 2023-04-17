@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 .. title:: sign_lens v0.1.0
 
-sign_lens Documentation
+SignLens Documentation
 =======================
 
 .. toctree::
