@@ -38,7 +38,7 @@ jobs:
         #     flake8  --max-line-length=115
         - name: Make docs
           run: |
-            make -C docs build
+            sphinx-build -b html docs build
         - name: Deploy Website
           uses: peaceiris/actions-gh-pages@v3
           with:
