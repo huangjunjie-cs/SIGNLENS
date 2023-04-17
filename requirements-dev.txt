@@ -1,5 +1,3 @@
-# These are required for developing the package (running the tests, building
-# the documentation) but not necessarily required for _using_ it.
 coverage
 flake8
 pytest
@@ -8,7 +6,7 @@ twine
 pre-commit
 black
 nbstripout
-# These are dependencies of various sphinx extensions for documentation.
+
 ipython
 matplotlib
 numpydoc
@@ -19,3 +17,5 @@ sphinx-autobuild
 
 sphinxcontrib-bibtex
 shibuya
+
+pip
