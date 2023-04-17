@@ -87,7 +87,7 @@ For USCV dataset, you can follow `this jupyter notebook <./ipynbs/uscv_analysis.
     :alt: House
 
 
-.. figure:: ./imgs/senate_sign.png
+.. figure:: ./docs/imgs/senate_sign.png
     :alt: Senate
 
 
