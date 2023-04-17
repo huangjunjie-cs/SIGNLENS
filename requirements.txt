@@ -6,3 +6,6 @@ texttable
 networkx
 tqdm
 
+aiohttp
+
+
