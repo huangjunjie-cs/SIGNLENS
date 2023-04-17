@@ -187,23 +187,6 @@ So when we analyze the signed bipartite networks, we can have two different anal
 Similarly, we can compute the number of signed Butterflies by computing the intersection of neighboring nodes or using matrix operations. For example, if we want to count the value of first butterfly (i.e., )
 
 
-Signed Heterogeneous Networks
------------------------------------
-
-A signed heterogeneous network is a social graph :math:`\mathcal{G}=\left(\mathcal{V},\mathcal{E}\right)`, where :math:`\mathcal{V}` is the set of nodes and :math:`\mathcal{E}` is the set of edges. 
-Specifically, the edge set :math:`\mathcal{E}` includes a signed edge type (i.e.,  |pos| and |neg| links).
-For every node, there will be a node type mapping function :math:`f_n`: :math:`\mathcal{V} \rightarrow \mathcal{A}`, and an edge type mapping function :math:`f_{e}` : :math:`\mathcal{E} \rightarrow \mathcal{R}`, where :math:`|\mathcal{A}| \geq 1`, :math:`|\mathcal{R}| \geq 1`, and :math:`|\mathcal{A}|+|\mathcal{R}| \geq 3`. 
-The :math:`\mathcal{A}` and :math:`\mathcal{R}` are the predefined sets of node types and edge types in the signed heterogeneous graph, respectively.
-
-.. note::
-
-    Compare to traditional heterogeneous graphs, signed heterogeneous networks will contain a sentiment link type :math:`\mathcal{R^{+/-}}`, which is the signed links. Specifically, when :math:`|\mathcal{A}|=2` and :math:`|\mathcal{R}|=1`, we refer such signed networks to signed bipartite graphs :cite:p:`huang2021signed`.
-
-
-
-
-Signed Meta Path
-*********************************************
 
 
 
