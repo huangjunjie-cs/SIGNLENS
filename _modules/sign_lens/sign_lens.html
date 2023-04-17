@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>sign_lens.sign_lens - SIGNLENS 0.post1+gd9353c4 documentation</title>
+    <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+  <script>
+    const isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const sessionTheme = sessionStorage['_theme']
+    if (sessionTheme) {
+      document.documentElement.classList.add(sessionTheme)
+    } else if (isDarkTheme) {
+      document.documentElement.classList.add('dark')
+    }
+  </script><link rel="stylesheet" href="../../_static/pygments.css?v=2023.3.19" type="text/css" />
+    <link rel="stylesheet" href="../../_static/shibuya.css?v=2023.3.19" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sxgnn.css" />
+    <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=2023.3.19" />
+    <style>
+:root {
+  --sy-f-sys:-apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Droid Sans, Helvetica Neue;--sy-f-cjk:PingFang SC, Hiragino Sans GB, Droid Sans Fallback, Microsoft YaHei;--sy-f-heading:var(--sy-f-sys), var(--sy-f-cjk), sans-serif;--sy-f-text:var(--sy-f-sys), var(--sy-f-cjk), sans-serif;--sy-f-mono:Menlo, Monaco, Consolas, "Courier New", monospace;--sy-c-divider:rgba(var(--sy-rc-text), 0.1);--sy-c-divider-weak:rgba(var(--sy-rc-text), 0.05);--sy-c-border:rgba(var(--sy-rc-text), 0.14);--sy-s-banner-height:0rem;--sy-s-navbar-height:4rem;--sy-s-offset-top:calc(var(--sy-s-navbar-height) + var(--sy-s-banner-height));--sy-c-link:rgb(var(--sy-rc-theme));
+  --sy-rc-theme:143, 118, 214;--sy-rc-bg:255, 255, 255;--sy-rc-invert:0, 0, 0;--sy-rc-text:0, 0, 0;--sy-c-bg:#fff;--sy-c-bg-weak:#f9f9f9;--sy-c-text:#374151;--sy-c-text-weak:#6b7280;--sy-c-heading:#111827;--sy-c-bold:#111827;--sy-c-foot-text:#232226;--sy-c-foot-bg:#fafafa;--sy-c-foot-divider:#f0f0f0;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --sy-rc-theme:143, 118, 214;--sy-rc-bg:255, 255, 255;--sy-rc-invert:0, 0, 0;--sy-rc-text:0, 0, 0;--sy-c-bg:#fff;--sy-c-bg-weak:#f9f9f9;--sy-c-text:#374151;--sy-c-text-weak:#6b7280;--sy-c-heading:#111827;--sy-c-bold:#111827;--sy-c-foot-text:#232226;--sy-c-foot-bg:#fafafa;--sy-c-foot-divider:#f0f0f0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sy-rc-theme:143, 118, 214;--sy-rc-bg:18, 18, 18;--sy-rc-invert:255, 255, 255;--sy-rc-text:255, 255, 255;--sy-c-bg:#121212;--sy-c-bg-weak:#212833;--sy-c-text:#cedbea;--sy-c-text-weak:#77889f;--sy-c-heading:#ebf0f4;--sy-c-bold:#ebf0f4;--sy-c-foot-text:#eee;--sy-c-foot-bg:#000;--sy-c-foot-divider:#000;
+  }
+}
+html.light {
+  --sy-rc-theme:143, 118, 214;--sy-rc-bg:255, 255, 255;--sy-rc-invert:0, 0, 0;--sy-rc-text:0, 0, 0;--sy-c-bg:#fff;--sy-c-bg-weak:#f9f9f9;--sy-c-text:#374151;--sy-c-text-weak:#6b7280;--sy-c-heading:#111827;--sy-c-bold:#111827;--sy-c-foot-text:#232226;--sy-c-foot-bg:#fafafa;--sy-c-foot-divider:#f0f0f0;
+}
+html.dark {
+  --sy-rc-theme:143, 118, 214;--sy-rc-bg:18, 18, 18;--sy-rc-invert:255, 255, 255;--sy-rc-text:255, 255, 255;--sy-c-bg:#121212;--sy-c-bg-weak:#212833;--sy-c-text:#cedbea;--sy-c-text-weak:#77889f;--sy-c-heading:#ebf0f4;--sy-c-bold:#ebf0f4;--sy-c-foot-text:#eee;--sy-c-foot-bg:#000;--sy-c-foot-divider:#000;
+}
+</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-heading: Inter, var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/><meta property="og:title" content="sign_lens.sign_lens"/>
+<meta name="twitter:card" content="summary"/></head>
+<body><div class="document"><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <div class="sy-head-brand flex items-center">
+      <div class="md:hidden flex items-center">
+        <button class="hamburger js-menu mr-3" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </button>
+      </div>
+      <a href="../../index.html">
+        
+        
+        <strong>SIGNLENS</strong>
+      </a>
+      
+    </div>
+    <div class="sy-head-actions flex gap-2 items-center print:hidden">
+      <nav class="sy-head-nav hidden md:block">
+      </nav>
+      <div class="hidden md:block"><form class="searchbox flex items-center" action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <kbd>/</kbd>
+</form>
+      </div>
+      <button class="js-theme theme-switch flex items-center ml-1" data-aria-light="Switch to dark mode" data-aria-dark="Switch to light mode">
+        <i class="i-icon theme-icon"></i>
+      </button>
+      
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-64 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="md:hidden pt-6 px-6"><form class="searchbox flex items-center" action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <button>Go</button>
+</form>
+      </div>
+      <div class="md:hidden pt-3 px-6">
+      </div>
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc">
+          <p class="caption" role="heading"><span class="caption-text">Home</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../preliminary.html">Preliminary for Signed Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../math_reference.html">Spectral Theory for Signed Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../application.html">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-history.html">Release History</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-icon close"></i>
+    </button>
+    <div class="sy-scrollbar px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div id="ethical-ad-placement"></div>
+    </div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6">
+    <div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-6 xl:px-12">
+        <article class="yue" role="main">
+          <h1>Source code for sign_lens.sign_lens</h1><div class="highlight"><pre>
+<span></span><span id="1-1"><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="1-2">
+</span><span id="1-3"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span><span id="1-4"><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</span><span id="1-5"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="1-6">
+</span><span id="1-7"><span class="kn">from</span> <span class="nn">texttable</span> <span class="kn">import</span> <span class="n">Texttable</span>
+</span><span id="1-8"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+</span><span id="1-9"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span><span id="1-10">
+</span><span id="1-11"><span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">SignedTriadFeaExtra</span><span class="p">,</span> <span class="n">SignedBipartiteFeaExtra</span>
+</span><span id="1-12">
+</span><span id="1-13">
+</span><span id="1-14"><span class="k">class</span> <span class="nc">SignLensBase</span><span class="p">:</span>
+</span><span id="1-15">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="1-16">        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses should implement this&quot;</span><span class="p">)</span>
+</span><span id="1-17">
+</span><span id="1-18">    <span class="k">def</span> <span class="nf">calc_node_num</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="1-19"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-20"><span class="sd">        calculate the number of nodes</span>
+</span><span id="1-21">
+</span><span id="1-22"><span class="sd">        Returns</span>
+</span><span id="1-23"><span class="sd">        -------</span>
+</span><span id="1-24"><span class="sd">        int</span>
+</span><span id="1-25"><span class="sd">            the node number</span>
+</span><span id="1-26"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-27">        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses should implement this&quot;</span><span class="p">)</span>
+</span><span id="1-28">
+</span><span id="1-29">    <span class="k">def</span> <span class="nf">calc_edge_num</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="1-30"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-31"><span class="sd">        calculate the number of edges</span>
+</span><span id="1-32">
+</span><span id="1-33"><span class="sd">        Returns</span>
+</span><span id="1-34"><span class="sd">        -------</span>
+</span><span id="1-35"><span class="sd">        int</span>
+</span><span id="1-36"><span class="sd">            the edge number</span>
+</span><span id="1-37"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-38">        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses should implement this&quot;</span><span class="p">)</span>
+</span><span id="1-39">
+</span><span id="1-40">    <span class="k">def</span> <span class="nf">calc_sign_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-41"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-42"><span class="sd">        calculate sign distribution</span>
+</span><span id="1-43">
+</span><span id="1-44"><span class="sd">        Returns</span>
+</span><span id="1-45"><span class="sd">        -------</span>
+</span><span id="1-46"><span class="sd">        tuple</span>
+</span><span id="1-47"><span class="sd">            (positive edge number, negative edge number, pos_neg_ratio)</span>
+</span><span id="1-48"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-49">        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses should implement this&quot;</span><span class="p">)</span>
+</span><span id="1-50">
+</span><span id="1-51">    <span class="k">def</span> <span class="nf">report_signed_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="1-52"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-53"><span class="sd">        report_signed_metrics print signed social networks analysis metrics</span>
+</span><span id="1-54">
+</span><span id="1-55">
+</span><span id="1-56"><span class="sd">        Returns</span>
+</span><span id="1-57"><span class="sd">        -------</span>
+</span><span id="1-58"><span class="sd">        NoneType</span>
+</span><span id="1-59"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-60">        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Subclasses should implement this&quot;</span><span class="p">)</span>
+</span><span id="1-61">
+</span><span id="1-62">
+<div class="viewcode-block" id="SignLens"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens">[docs]</a></span><span id="1-63"><span class="k">class</span> <span class="nc">SignLens</span><span class="p">(</span><span class="n">SignLensBase</span><span class="p">):</span>
+</span><span id="1-64"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-65"><span class="sd">    SignLens is a class for analyzing signed networks.</span>
+</span><span id="1-66"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="1-67">
+</span><span id="1-68">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edgelist_fpath</span><span class="p">,</span> <span class="n">seperator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="1-69"><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-70"><span class="sd">        __init__ sign_lens class for signed graph modeling</span>
+</span><span id="1-71">
+</span><span id="1-72"><span class="sd">        It is used for analyzing signed directed networks</span>
+</span><span id="1-73">
+</span><span id="1-74"><span class="sd">        Parameters</span>
+</span><span id="1-75"><span class="sd">        ----------</span>
+</span><span id="1-76"><span class="sd">        edgelist_fpath : str</span>
+</span><span id="1-77"><span class="sd">            It is the file path for analyzing.</span>
+</span><span id="1-78"><span class="sd">        seperator : str, optional</span>
+</span><span id="1-79"><span class="sd">            The file seperator, by default &#39;\t&#39;</span>
+</span><span id="1-80"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-81">        <span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span> <span class="o">=</span> <span class="n">edgelist_fpath</span>
+</span><span id="1-82">        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span><span class="p">,</span>
+</span><span id="1-83">                                   <span class="n">sep</span><span class="o">=</span><span class="n">seperator</span><span class="p">,</span>
+</span><span id="1-84">                                   <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+</span><span id="1-85">        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;source_node&#39;</span><span class="p">,</span> <span class="s1">&#39;target_node&#39;</span><span class="p">,</span> <span class="s1">&#39;sign&#39;</span><span class="p">]</span>
+</span><span id="1-86">
+</span><span id="1-87">        <span class="n">node_list</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">target_node</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> <span class="o">+</span>
+</span><span id="1-88">                        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">source_node</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span><span id="1-89">        <span class="bp">self</span><span class="o">.</span><span class="n">node_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">ind</span> <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">node_list</span><span class="p">)}</span>
+</span><span id="1-90">        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;source_node&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;source_node&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+</span><span id="1-91">            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</span><span id="1-92">        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;target_node&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;target_node&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+</span><span id="1-93">            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_dict</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+</span><span id="1-94">
+</span><span id="1-95">        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[[</span><span class="s1">&#39;source_node&#39;</span><span class="p">,</span>
+</span><span id="1-96">                                          <span class="s1">&#39;target_node&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span><span id="1-97">        <span class="n">pos_edge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="1-98">        <span class="bp">self</span><span class="o">.</span><span class="n">pos_G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="n">pos_edge</span><span class="p">[[</span><span class="s1">&#39;source_node&#39;</span><span class="p">,</span>
+</span><span id="1-99">                                          <span class="s1">&#39;target_node&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span><span id="1-100">        <span class="n">neg_edge</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="1-101">        <span class="bp">self</span><span class="o">.</span><span class="n">neg_G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">(</span><span class="n">neg_edge</span><span class="p">[[</span><span class="s1">&#39;source_node&#39;</span><span class="p">,</span>
+</span><span id="1-102">                                          <span class="s1">&#39;target_node&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span><span id="1-103">
+<div class="viewcode-block" id="SignLens.report_signed_metrics"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.report_signed_metrics">[docs]</a></span><span id="1-104">    <span class="k">def</span> <span class="nf">report_signed_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;output&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="1-105"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-106"><span class="sd">        Report signed metrics for a signed network.</span>
+</span><span id="1-107">
+</span><span id="1-108"><span class="sd">        The main signed network metrics include *sign distribution*, *balanced triangle distrubition*, *signed in-degree distribution*, *signed out-degree distribution*, *in-degree distribution*, *out-degree distribution*, *hop plot* and *singular value distribution* according to this paper: `&quot;BalanSiNG: Fast and Scalable Generation of Realistic Signed Networks&quot; &lt;https://openproceedings.org/2020/conf/edbt/paper_102.pdf&gt;`_.</span>
+</span><span id="1-109">
+</span><span id="1-110"><span class="sd">        Parameters</span>
+</span><span id="1-111"><span class="sd">        ----------</span>
+</span><span id="1-112"><span class="sd">        output_dir : str, optional</span>
+</span><span id="1-113"><span class="sd">            It will output some figures to the ourput_dir, by default &#39;output&#39;</span>
+</span><span id="1-114">
+</span><span id="1-115"><span class="sd">        Returns</span>
+</span><span id="1-116"><span class="sd">        -------</span>
+</span><span id="1-117"><span class="sd">        str</span>
+</span><span id="1-118"><span class="sd">            The table for signed metrics.</span>
+</span><span id="1-119"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-120">        <span class="n">args</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="1-121">
+</span><span id="1-122">        <span class="n">pos_num</span><span class="p">,</span> <span class="n">neg_num</span><span class="p">,</span> <span class="n">pos_r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_sign_dist</span><span class="p">()</span>
+</span><span id="1-123">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;The number of nodes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_node_num</span><span class="p">()</span>
+</span><span id="1-124">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;The number of edges (+, -, total)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos_num</span><span class="p">,</span> <span class="n">neg_num</span><span class="p">,</span> <span class="n">pos_num</span> <span class="o">+</span> <span class="n">neg_num</span><span class="p">)</span>
+</span><span id="1-125">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;sign distribution (+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos_r</span>
+</span><span id="1-126">
+</span><span id="1-127">        <span class="n">triads_dist</span><span class="p">,</span> <span class="n">b_ratio</span><span class="p">,</span> <span class="n">u_ratio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_signed_triads_dist</span><span class="p">()</span>
+</span><span id="1-128">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;balanced triangle distribution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">b_ratio</span>
+</span><span id="1-129">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;unbalanced triangle distribution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">u_ratio</span>
+</span><span id="1-130">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;signed triangle  (+++, ++-, +--, ---)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+</span><span id="1-131">            <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">triads_dist</span><span class="p">])</span>
+</span><span id="1-132">
+</span><span id="1-133">        <span class="c1"># export plot for degree distributions</span>
+</span><span id="1-134">        <span class="n">G_in_degree</span><span class="p">,</span> <span class="n">pos_G_in_degree</span><span class="p">,</span> <span class="n">neg_G_in_degree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_signed_in_degree</span><span class="p">(</span>
+</span><span id="1-135">        <span class="p">)</span>
+</span><span id="1-136">        <span class="n">G_out_degree</span><span class="p">,</span> <span class="n">pos_G_out_degree</span><span class="p">,</span> <span class="n">neg_G_out_degree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_signed_in_degree</span><span class="p">(</span>
+</span><span id="1-137">        <span class="p">)</span>
+</span><span id="1-138">
+</span><span id="1-139">        <span class="n">fnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;In-degree&#39;</span><span class="p">,</span> <span class="s1">&#39;Out-degree&#39;</span><span class="p">]</span>
+</span><span id="1-140">        <span class="n">datas</span> <span class="o">=</span> <span class="p">[(</span><span class="n">G_in_degree</span><span class="p">,</span> <span class="n">pos_G_in_degree</span><span class="p">,</span> <span class="n">neg_G_in_degree</span><span class="p">),</span>
+</span><span id="1-141">                 <span class="p">(</span><span class="n">G_out_degree</span><span class="p">,</span> <span class="n">pos_G_out_degree</span><span class="p">,</span> <span class="n">neg_G_out_degree</span><span class="p">)]</span>
+</span><span id="1-142">
+</span><span id="1-143">        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
+</span><span id="1-144">            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+</span><span id="1-145">
+</span><span id="1-146">        <span class="k">for</span> <span class="n">fname</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fnames</span><span class="p">,</span> <span class="n">datas</span><span class="p">):</span>
+</span><span id="1-147">            <span class="n">data0</span><span class="p">,</span> <span class="n">data1</span><span class="p">,</span> <span class="n">data2</span> <span class="o">=</span> <span class="n">data</span>
+</span><span id="1-148">
+</span><span id="1-149">            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span><span id="1-150">            <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;.pdf&#39;</span><span class="p">)</span>
+</span><span id="1-151">            <span class="n">cc</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data0</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</span><span id="1-152">            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">cc</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+</span><span id="1-153">            <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-154">            <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-155">            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</span><span id="1-156">            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+</span><span id="1-157">            <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_data_ratio</span><span class="p">())</span>
+</span><span id="1-158">            <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+</span><span id="1-159">            <span class="n">args</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s1">output&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fpath</span>
+</span><span id="1-160">
+</span><span id="1-161">            <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;-sign.pdf&#39;</span><span class="p">)</span>
+</span><span id="1-162">            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span><span id="1-163">            <span class="n">cc</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</span><span id="1-164">            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+</span><span id="1-165">                       <span class="n">cc</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+</span><span id="1-166">                       <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+</span><span id="1-167">                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+</span><span id="1-168">                       <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span>
+</span><span id="1-169">                       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Positive&#39;</span><span class="p">)</span>
+</span><span id="1-170">            <span class="n">cc</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</span><span id="1-171">            <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+</span><span id="1-172">                       <span class="n">cc</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+</span><span id="1-173">                       <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+</span><span id="1-174">                       <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+</span><span id="1-175">                       <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span>
+</span><span id="1-176">                       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Negative&#39;</span><span class="p">)</span>
+</span><span id="1-177">
+</span><span id="1-178">            <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-179">            <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-180">            <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</span><span id="1-181">            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+</span><span id="1-182">            <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</span><span id="1-183">            <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_data_ratio</span><span class="p">())</span>
+</span><span id="1-184">            <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+</span><span id="1-185">            <span class="n">args</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s1"> sign output&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fpath</span>
+</span><span id="1-186">
+</span><span id="1-187">        <span class="c1"># plot hopcnt</span>
+</span><span id="1-188">        <span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;Hop&#39;</span>
+</span><span id="1-189">        <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;.pdf&#39;</span><span class="p">)</span>
+</span><span id="1-190">        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_hop_dist</span><span class="p">()</span>
+</span><span id="1-191">        <span class="n">cc</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</span><span id="1-192">        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span><span id="1-193">        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">cc</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</span><span id="1-194">        <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-195">        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</span><span id="1-196">        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+</span><span id="1-197">        <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_data_ratio</span><span class="p">())</span>
+</span><span id="1-198">        <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+</span><span id="1-199">        <span class="n">args</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">fname</span><span class="si">}</span><span class="s1"> sign output&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fpath</span>
+</span><span id="1-200">
+</span><span id="1-201">        <span class="c1"># plot Sigular Value</span>
+</span><span id="1-202">        <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_singular_value_dist</span><span class="p">()</span>
+</span><span id="1-203">        <span class="n">ind</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="1-204">        <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+</span><span id="1-205">        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ind</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="n">sv</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+</span><span id="1-206">        <span class="n">ax</span><span class="o">.</span><span class="n">margins</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="1-207">        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+</span><span id="1-208">        <span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-209">        <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+</span><span id="1-210">        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Top-k&#39;</span><span class="p">)</span>
+</span><span id="1-211">        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Singular Values&#39;</span><span class="p">)</span>
+</span><span id="1-212">        <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_data_ratio</span><span class="p">())</span>
+</span><span id="1-213">        <span class="n">fpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s1">&#39;Top-K.pdf&#39;</span><span class="p">)</span>
+</span><span id="1-214">        <span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+</span><span id="1-215">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;Singular value distribution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fpath</span>
+</span><span id="1-216">
+</span><span id="1-217">        <span class="n">keys</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span><span id="1-218">        <span class="n">t</span> <span class="o">=</span> <span class="n">Texttable</span><span class="p">()</span>
+</span><span id="1-219">        <span class="n">t</span><span class="o">.</span><span class="n">add_rows</span><span class="p">([[</span><span class="s2">&quot;Metrics&quot;</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">]]</span> <span class="o">+</span>
+</span><span id="1-220">                   <span class="p">[[</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="n">args</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">])</span>
+</span><span id="1-221">        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span></div>
+</span><span id="1-222">
+<div class="viewcode-block" id="SignLens.calc_node_num"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_node_num">[docs]</a></span><span id="1-223">    <span class="k">def</span> <span class="nf">calc_node_num</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="1-224"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-225"><span class="sd">        calculate the number of nodes</span>
+</span><span id="1-226">
+</span><span id="1-227"><span class="sd">        Returns</span>
+</span><span id="1-228"><span class="sd">        -------</span>
+</span><span id="1-229"><span class="sd">        int</span>
+</span><span id="1-230"><span class="sd">            the node number</span>
+</span><span id="1-231"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-232">        <span class="n">node_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">target_node</span><span class="o">.</span><span class="n">tolist</span><span class="p">(</span>
+</span><span id="1-233">        <span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">source_node</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</span><span id="1-234">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">node_list</span><span class="p">))</span></div>
+</span><span id="1-235">
+<div class="viewcode-block" id="SignLens.calc_edge_num"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_edge_num">[docs]</a></span><span id="1-236">    <span class="k">def</span> <span class="nf">calc_edge_num</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="1-237"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-238"><span class="sd">        calculate the number of edges</span>
+</span><span id="1-239">
+</span><span id="1-240"><span class="sd">        Returns</span>
+</span><span id="1-241"><span class="sd">        -------</span>
+</span><span id="1-242"><span class="sd">        int</span>
+</span><span id="1-243"><span class="sd">            the edge number</span>
+</span><span id="1-244"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-245">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">)</span></div>
+</span><span id="1-246">
+<div class="viewcode-block" id="SignLens.calc_sign_dist"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_sign_dist">[docs]</a></span><span id="1-247">    <span class="k">def</span> <span class="nf">calc_sign_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-248"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-249"><span class="sd">        calculate sign distribution</span>
+</span><span id="1-250">
+</span><span id="1-251"><span class="sd">        Returns</span>
+</span><span id="1-252"><span class="sd">        -------</span>
+</span><span id="1-253"><span class="sd">        tuple</span>
+</span><span id="1-254"><span class="sd">            (positive edge number, negative edge number, pos_neg_ratio)</span>
+</span><span id="1-255"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-256">        <span class="n">pos_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="1-257">        <span class="n">neg_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="1-258">
+</span><span id="1-259">        <span class="k">return</span> <span class="p">(</span><span class="n">pos_num</span><span class="p">,</span> <span class="n">neg_num</span><span class="p">,</span> <span class="n">pos_num</span> <span class="o">/</span> <span class="p">(</span><span class="n">pos_num</span> <span class="o">+</span> <span class="n">neg_num</span><span class="p">))</span></div>
+</span><span id="1-260">
+<div class="viewcode-block" id="SignLens.calc_signed_in_degree"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_signed_in_degree">[docs]</a></span><span id="1-261">    <span class="k">def</span> <span class="nf">calc_signed_in_degree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-262"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-263"><span class="sd">        calculate signed in degree</span>
+</span><span id="1-264">
+</span><span id="1-265"><span class="sd">        Returns</span>
+</span><span id="1-266"><span class="sd">        -------</span>
+</span><span id="1-267"><span class="sd">        tuple</span>
+</span><span id="1-268"><span class="sd">            (G_in_degree, pos_G_in_degree, neg_G_in_dergee)</span>
+</span><span id="1-269"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-270">        <span class="n">G_in_degree</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()}</span>
+</span><span id="1-271">        <span class="n">pos_G_in_degree</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos_G</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()}</span>
+</span><span id="1-272">        <span class="n">neg_G_in_dergee</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neg_G</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()}</span>
+</span><span id="1-273">
+</span><span id="1-274">        <span class="k">return</span> <span class="p">(</span><span class="n">G_in_degree</span><span class="p">,</span> <span class="n">pos_G_in_degree</span><span class="p">,</span> <span class="n">neg_G_in_dergee</span><span class="p">)</span></div>
+</span><span id="1-275">
+<div class="viewcode-block" id="SignLens.calc_signed_out_degree"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_signed_out_degree">[docs]</a></span><span id="1-276">    <span class="k">def</span> <span class="nf">calc_signed_out_degree</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-277"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-278"><span class="sd">        calculate signed out degree</span>
+</span><span id="1-279">
+</span><span id="1-280"><span class="sd">        Returns</span>
+</span><span id="1-281"><span class="sd">        -------</span>
+</span><span id="1-282"><span class="sd">        tuple</span>
+</span><span id="1-283"><span class="sd">            (G_in_degree, pos_G_in_degree, neg_G_in_dergee)</span>
+</span><span id="1-284"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-285">        <span class="n">G_out_degree</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">()}</span>
+</span><span id="1-286">        <span class="n">pos_G_out_degree</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos_G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">()}</span>
+</span><span id="1-287">        <span class="n">neg_G_out_dergee</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neg_G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">()}</span>
+</span><span id="1-288">
+</span><span id="1-289">        <span class="k">return</span> <span class="p">(</span><span class="n">G_out_degree</span><span class="p">,</span> <span class="n">pos_G_out_degree</span><span class="p">,</span> <span class="n">neg_G_out_dergee</span><span class="p">)</span></div>
+</span><span id="1-290">
+<div class="viewcode-block" id="SignLens.calc_hop_dist"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_hop_dist">[docs]</a></span><span id="1-291">    <span class="k">def</span> <span class="nf">calc_hop_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+</span><span id="1-292"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-293"><span class="sd">        calculate the distrubiton of hops</span>
+</span><span id="1-294">
+</span><span id="1-295"><span class="sd">        Returns</span>
+</span><span id="1-296"><span class="sd">        -------</span>
+</span><span id="1-297"><span class="sd">        dict</span>
+</span><span id="1-298"><span class="sd">            the dict of ``{&#39;d&#39;: counts }``</span>
+</span><span id="1-299"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-300">        <span class="n">short_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">)}</span>
+</span><span id="1-301">        <span class="n">hop_dist</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="1-302">        <span class="n">v_max</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="1-303">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">short_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="1-304">            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">v</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="1-305">                <span class="n">key</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</span><span id="1-306">                <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+</span><span id="1-307">                    <span class="n">hop_dist</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span>
+</span><span id="1-308">                    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">v_max</span><span class="p">:</span>
+</span><span id="1-309">                        <span class="n">v_max</span> <span class="o">=</span> <span class="n">k</span>
+</span><span id="1-310">        <span class="k">return</span> <span class="n">hop_dist</span></div>
+</span><span id="1-311">
+<div class="viewcode-block" id="SignLens.calc_singular_value_dist"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_singular_value_dist">[docs]</a></span><span id="1-312">    <span class="k">def</span> <span class="nf">calc_singular_value_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+</span><span id="1-313"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-314"><span class="sd">        calculated singular value distribution</span>
+</span><span id="1-315">
+</span><span id="1-316"><span class="sd">        Returns</span>
+</span><span id="1-317"><span class="sd">        -------</span>
+</span><span id="1-318"><span class="sd">            return the svd results of undirected unsigned matrice</span>
+</span><span id="1-319"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-320">        <span class="n">uG</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">to_undirected</span><span class="p">()</span>
+</span><span id="1-321">        <span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">to_numpy_matrix</span><span class="p">(</span><span class="n">uG</span><span class="p">)</span>
+</span><span id="1-322">        <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="1-323">        <span class="k">return</span> <span class="n">s</span></div>
+</span><span id="1-324">
+<div class="viewcode-block" id="SignLens.calc_balanced_triangle_dist"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_balanced_triangle_dist">[docs]</a></span><span id="1-325">    <span class="k">def</span> <span class="nf">calc_balanced_triangle_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-326"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-327"><span class="sd">        calculate balanced triangle distributions</span>
+</span><span id="1-328">
+</span><span id="1-329"><span class="sd">        Returns</span>
+</span><span id="1-330"><span class="sd">        -------</span>
+</span><span id="1-331"><span class="sd">        tuple</span>
+</span><span id="1-332"><span class="sd">            (balanced triads, unbalanced triads)</span>
+</span><span id="1-333"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-334">        <span class="n">model</span> <span class="o">=</span> <span class="n">SignedTriadFeaExtra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span><span class="p">,</span> <span class="n">undirected</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="1-335">        <span class="n">s0</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">calc_balance_and_status_triads_num</span><span class="p">()</span>
+</span><span id="1-336">        <span class="n">ratio</span> <span class="o">=</span> <span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span><span class="p">)</span> <span class="o">/</span> <span class="n">s0</span>
+</span><span id="1-337">        <span class="k">return</span> <span class="n">ratio</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">ratio</span></div>
+</span><span id="1-338">
+<div class="viewcode-block" id="SignLens.calc_signed_triads_dist"><a class="viewcode-back" href="../../api.html#sign_lens.sign_lens.SignLens.calc_signed_triads_dist">[docs]</a></span><span id="1-339">    <span class="k">def</span> <span class="nf">calc_signed_triads_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-340"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-341"><span class="sd">        calculate signed triads distributions</span>
+</span><span id="1-342">
+</span><span id="1-343"><span class="sd">        Returns</span>
+</span><span id="1-344"><span class="sd">        -------</span>
+</span><span id="1-345"><span class="sd">        tuple</span>
+</span><span id="1-346"><span class="sd">            ((+++, ++-, +--, ---), balanced triads, unbalanced triads)</span>
+</span><span id="1-347"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-348">        <span class="n">model</span> <span class="o">=</span> <span class="n">SignedTriadFeaExtra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span><span class="p">,</span> <span class="n">undirected</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="1-349">        <span class="n">res</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">calc_balance_triads_dist</span><span class="p">()</span>
+</span><span id="1-350">        <span class="c1"># +++ ++- +-- ---</span>
+</span><span id="1-351">        <span class="n">b_triad</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="1-352">        <span class="n">u_triad</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="1-353">        <span class="k">return</span> <span class="n">res</span><span class="p">,</span> <span class="n">b_triad</span><span class="p">,</span> <span class="n">u_triad</span></div></div>
+</span><span id="1-354">
+</span><span id="1-355">
+</span><span id="1-356"><span class="k">class</span> <span class="nc">SignBipartiteLens</span><span class="p">(</span><span class="n">SignLensBase</span><span class="p">):</span>
+</span><span id="1-357">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edgelist_fpath</span><span class="p">,</span> <span class="n">seperator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="1-358">        <span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span> <span class="o">=</span> <span class="n">edgelist_fpath</span>
+</span><span id="1-359">        <span class="bp">self</span><span class="o">.</span><span class="n">seperator</span> <span class="o">=</span> <span class="n">seperator</span>
+</span><span id="1-360">        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span><span class="p">,</span>
+</span><span id="1-361">                                   <span class="n">sep</span><span class="o">=</span><span class="n">seperator</span><span class="p">,</span>
+</span><span id="1-362">                                   <span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
+</span><span id="1-363">        <span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;node_u&#39;</span><span class="p">,</span> <span class="s1">&#39;node_v&#39;</span><span class="p">,</span> <span class="s1">&#39;sign&#39;</span><span class="p">]</span>
+</span><span id="1-364">
+</span><span id="1-365">    <span class="k">def</span> <span class="nf">calc_signed_bipartite_butterfly_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="1-366">        <span class="n">model</span> <span class="o">=</span> <span class="n">SignedBipartiteFeaExtra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edgelist_fpath</span><span class="p">,</span> <span class="n">seperator</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">seperator</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span><span id="1-367">        <span class="n">signs</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">calc_signed_butterfly_dist</span><span class="p">()</span>
+</span><span id="1-368">        <span class="k">return</span> <span class="n">signs</span><span class="p">,</span> <span class="n">res</span>
+</span><span id="1-369">
+</span><span id="1-370">    <span class="k">def</span> <span class="nf">calc_node_num</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="1-371"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-372"><span class="sd">        calculate the number of nodes</span>
+</span><span id="1-373">
+</span><span id="1-374"><span class="sd">        Returns</span>
+</span><span id="1-375"><span class="sd">        -------</span>
+</span><span id="1-376"><span class="sd">        int</span>
+</span><span id="1-377"><span class="sd">            the node number</span>
+</span><span id="1-378"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-379">        <span class="n">node_list1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">node_u</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span><span id="1-380">        <span class="n">node_list2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="o">.</span><span class="n">node_v</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+</span><span id="1-381">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">node_list1</span><span class="p">)),</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">node_list2</span><span class="p">))</span>
+</span><span id="1-382">
+</span><span id="1-383">    <span class="k">def</span> <span class="nf">calc_edge_num</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="1-384"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-385"><span class="sd">        calculate the number of edges</span>
+</span><span id="1-386">
+</span><span id="1-387"><span class="sd">        Returns</span>
+</span><span id="1-388"><span class="sd">        -------</span>
+</span><span id="1-389"><span class="sd">        int</span>
+</span><span id="1-390"><span class="sd">            the edge number</span>
+</span><span id="1-391"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-392">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">)</span>
+</span><span id="1-393">
+</span><span id="1-394">    <span class="k">def</span> <span class="nf">calc_sign_dist</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+</span><span id="1-395"><span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="1-396"><span class="sd">        calculate sign distribution</span>
+</span><span id="1-397">
+</span><span id="1-398"><span class="sd">        Returns</span>
+</span><span id="1-399"><span class="sd">        -------</span>
+</span><span id="1-400"><span class="sd">        tuple</span>
+</span><span id="1-401"><span class="sd">            (positive edge number, negative edge number, pos_neg_ratio)</span>
+</span><span id="1-402"><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="1-403">        <span class="n">pos_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="1-404">        <span class="n">neg_num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_df</span><span class="p">[</span><span class="s1">&#39;sign&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="1-405">
+</span><span id="1-406">        <span class="k">return</span> <span class="p">(</span><span class="n">pos_num</span><span class="p">,</span> <span class="n">neg_num</span><span class="p">,</span> <span class="n">pos_num</span> <span class="o">/</span> <span class="p">(</span><span class="n">pos_num</span> <span class="o">+</span> <span class="n">neg_num</span><span class="p">))</span>
+</span><span id="1-407">
+</span><span id="1-408">    <span class="k">def</span> <span class="nf">report_signed_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;output&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="1-409">        <span class="n">args</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="1-410">
+</span><span id="1-411">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;The number of nodes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_node_num</span><span class="p">()</span>
+</span><span id="1-412">        <span class="n">pos_num</span><span class="p">,</span> <span class="n">neg_num</span><span class="p">,</span> <span class="n">pos_r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_sign_dist</span><span class="p">()</span>
+</span><span id="1-413">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;The number of edges (+, -, total)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos_num</span><span class="p">,</span> <span class="n">neg_num</span><span class="p">,</span> <span class="n">pos_num</span> <span class="o">+</span> <span class="n">neg_num</span><span class="p">)</span>
+</span><span id="1-414">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;sign distribution (+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pos_r</span>
+</span><span id="1-415">        <span class="n">signs</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calc_signed_butterfly_dist</span><span class="p">()</span>
+</span><span id="1-416">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;balanced butterfly distribution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">res</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</span><span id="1-417">        <span class="n">args</span><span class="p">[</span><span class="s1">&#39;unbalanced butterfly distribution&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+</span><span id="1-418">        <span class="n">sign_str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">signs</span><span class="p">)</span>
+</span><span id="1-419">        <span class="n">args</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;signed butterfly (</span><span class="si">{</span><span class="n">sign_str</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+</span><span id="1-420">
+</span><span id="1-421">        <span class="n">keys</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span><span id="1-422">        <span class="n">t</span> <span class="o">=</span> <span class="n">Texttable</span><span class="p">()</span>
+</span><span id="1-423">        <span class="n">t</span><span class="o">.</span><span class="n">add_rows</span><span class="p">([[</span><span class="s2">&quot;Metrics&quot;</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">]]</span> <span class="o">+</span>
+</span><span id="1-424">                   <span class="p">[[</span><span class="n">k</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="n">args</span><span class="p">[</span><span class="n">k</span><span class="p">]]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">])</span>
+</span><span id="1-425">        <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
+</span></pre></div>
+        </article>
+        
+      </div>
+      <div class="min-w-0 max-w-6xl px-6 pb-6 xl:pt-6 xl:px-12">
+        <div class="navigation flex print:hidden">
+  
+  
+</div>
+        
+      </div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2021, junjiehuang</p>
+        
+        <p>
+          Made with
+          
+          <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+          
+          <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+        </p>
+      </div>
+      <div class="sy-foot-socials">
+      </div>
+    </div>
+  </div>
+</footer></div>
+      <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+      <script src="../../_static/doctools.js"></script>
+      <script src="../../_static/sphinx_highlight.js"></script>
+      <script src="../../_static/clipboard.min.js"></script>
+      <script src="../../_static/copybutton.js"></script>
+      <script src="../../_static/shibuya.js?v=2023.3.19"></script>
+    
+</body>
+</html>
