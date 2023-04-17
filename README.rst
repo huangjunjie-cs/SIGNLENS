@@ -73,7 +73,7 @@ CBDB
 For CBDB dataset, you can follow `this jupyter notebook <./ipynbs/cbdb_analysis.ipynb>`_
 
 
-.. figure:: ./imgs/cbdb_sign.png
+.. figure:: ./docs/imgs/cbdb_sign.png
     :alt: CBDB
 
 
@@ -83,11 +83,13 @@ USCV
 
 For USCV dataset, you can follow `this jupyter notebook <./ipynbs/uscv_analysis.ipynb>`_
 
-.. figure:: ./imgs/house_sign.png
+.. figure:: ./docs/imgs/house_sign.png
     :alt: House
 
 
-![senate_sign](./imgs/senate_sign.png?raw=true "Senate")
+.. figure:: ./imgs/senate_sign.png
+    :alt: Senate
+
 
 Developments
 ============
