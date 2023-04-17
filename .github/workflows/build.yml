@@ -38,9 +38,9 @@ jobs:
         #     flake8  --max-line-length=115
         - name: Make docs
           run: |
-            make -C docs html
+            make -C docs build
         - name: Deploy Website
           uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: html
+            publish_dir: ./build
