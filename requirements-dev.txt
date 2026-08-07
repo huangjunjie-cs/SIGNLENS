@@ -11,11 +11,10 @@ ipython
 matplotlib
 numpydoc
 sphinx-copybutton
-sphinx_rtd_theme
+sphinx-book-theme
 myst-parser # add markdown support
 sphinx-autobuild
 
 sphinxcontrib-bibtex
-shibuya
 
 pip

@@ -187,10 +187,6 @@ So when we analyze the signed bipartite networks, we can have two different anal
 Similarly, we can compute the number of signed Butterflies by computing the intersection of neighboring nodes or using matrix operations. For example, if we want to count the value of first butterfly (i.e., )
 
 
-
-
-
-
 References
 -------------------------
 

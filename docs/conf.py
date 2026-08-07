@@ -25,13 +25,16 @@ extensions = [
     'IPython.sphinxext.ipython_directive',
     'IPython.sphinxext.ipython_console_highlighting',
     'matplotlib.sphinxext.plot_directive',
+    "sphinx_immaterial",
     'numpydoc',
+    'sphinx_design',
     'sphinx_copybutton',
 
 ]
 
 
 bibtex_bibfiles = ['refs.bib']
+
 # Configuration options for plot_directive. See:
 # https://github.com/matplotlib/matplotlib/blob/f3ed922d935751e08494e5fb5311d3050a3b637b/lib/matplotlib/sphinxext/plot_directive.py#L81
 plot_html_show_source_link = False
@@ -54,13 +57,12 @@ release = sign_lens.__version__
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'shibuya'
+html_theme = 'pydata_sphinx_theme'
 numfig = True
 html_static_path = ['_static']
 html_css_files = [
     'sxgnn.css',
 ]
-
 htmlhelp_basename = 'SIGNLENS'
 
 # -- Options for LaTeX output ---------------------------------------------
