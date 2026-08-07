@@ -97,7 +97,6 @@ def getIndividualAnalysis(request, item: IndividualQueryItem):
     # subgraph nodes
     nodes_list = set(sub_g.nodes)
     
-
     # 
     print(nodes_list)
     df1 = edge_df[(edge_df['PersonIdA'].astype(str).isin(nodes_list) & edge_df['PersonIdB'].astype(str).isin(nodes_list) )]

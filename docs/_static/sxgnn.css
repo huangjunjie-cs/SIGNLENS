@@ -1,0 +1,10 @@
+span.pos{
+--tw-bg-opacity:1;
+	background-color:rgb(226 231 191/var(--tw-bg-opacity));
+	padding:.125rem .25rem}
+.dark span.pos{--tw-text-opacity:1;
+	color:rgb(55 65 81/var(--tw-text-opacity))}span.neg{--tw-bg-opacity:1;
+	background-color:rgb(240 201 207/var(--tw-bg-opacity));
+	padding:.125rem .25rem}.dark span.neg{--tw-text-opacity:1;
+	color:rgb(55 65 81/var(--tw-text-opacity))}div.paper-info{padding-left:1rem;
+	font-size:.875rem;line-height:1.25rem}

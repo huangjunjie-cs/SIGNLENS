@@ -9,8 +9,6 @@ SignLens Documentation
 
 .. toctree::
    :maxdepth: 2
-   :caption: Home
-   :hidden:
    
    introduction
    installation
