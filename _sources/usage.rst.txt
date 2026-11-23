@@ -4,11 +4,17 @@ Usage
 
 
 
-Command line usage 
+Command line usage
 -------------------------
 
-After finish the :doc:`installation`, it can be invoked from the command line by:
+After :doc:`installation` the ``signlens`` command offers::
 
+    signlens report edges.tsv [--bipartite] [--basic] [--output DIR]
+    signlens polarization edges.tsv [--labels groups.tsv] [--json]
+    signlens congress --chambers H S --from 1 --to 119 --out datas/voteview
+    signlens serve [--host 127.0.0.1 --port 8000]
+
+The original 2021 invocation is still supported and prints the descriptive report:
 
 .. code-block:: bash
 
@@ -84,11 +90,20 @@ For signed bipartite networks, you can run it by:
 Package usage
 ---------------
 
-You can use it by importing some class you want to use.
+.. code-block:: python
+
+    import signlens as sl
+    g = sl.SignedGraph.from_csv('./xxx.edgelist')
+    sl.triad_census(g)
+    sl.polarization_profile(g)
+
+The 2021 API keeps working:
 
 .. code-block:: python
 
     from sign_lens import SignLens
     model = SignLens('./xxx.edgelist')
     model.report_signed_metrics()
+
+See :doc:`polarization` for the polarization measures.
 

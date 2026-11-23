@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signlens.congress &#8212; SIGNLENS 2.0.0.dev0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx_immaterial_theme.52c4e8fabf605a32c.min.css?v=d165d98b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sxgnn.css?v=7dfe0d2b" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../../_static/sphinx_immaterial_theme.ce3f826234c1e494c.min.js?v=6917d573"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/signlens/congress';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.0.0.dev0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SIGNLENS 2.0.0.dev0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../usage.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../polarization.html">
+    Measuring polarization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../preliminary.html">
+    Preliminary for Signed Networks
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../math_reference.html">
+    Spectral Theory for Signed Networks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../application.html">
+    Applications
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api.html">
+    API
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../release-history.html">
+    Release History
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../usage.html">
+    Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../polarization.html">
+    Measuring polarization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../preliminary.html">
+    Preliminary for Signed Networks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../math_reference.html">
+    Spectral Theory for Signed Networks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../application.html">
+    Applications
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../release-history.html">
+    Release History
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">signlens.congress</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for signlens.congress</h1><div class="highlight"><pre>
+<span></span><code><span class="sd">"""Polarization of the U.S. Congress, 1789 - today.</span>
+
+<span class="sd">For each chamber and Congress we</span>
+
+<span class="sd">1. load member x roll-call votes from Voteview,</span>
+<span class="sd">2. estimate ideal points from the vote matrix (:func:`ideal_points`),</span>
+<span class="sd">3. project the votes into a signed co-voting network (agreement &gt;= 70% -&gt; +,</span>
+<span class="sd">   &lt;= 30% -&gt; -), and</span>
+<span class="sd">4. measure polarization along every axis of :mod:`signlens.polarization`.</span>
+
+<span class="sd">``build_series`` writes one JSON per Congress plus a per-chamber time series,</span>
+<span class="sd">which the web app animates.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">balance</span><span class="p">,</span> <span class="n">polarization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.basic</span><span class="w"> </span><span class="kn">import</span> <span class="n">triad_census</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.datasets.voteview</span><span class="w"> </span><span class="kn">import</span> <span class="n">LATEST_CONGRESS</span><span class="p">,</span> <span class="n">congress_years</span><span class="p">,</span> <span class="n">load_congress</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.projection</span><span class="w"> </span><span class="kn">import</span> <span class="n">agreement_summary</span><span class="p">,</span> <span class="n">project</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_network_sample</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">neg_k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Strongest ties per member, for drawing: ``[i, j, sign]`` (agreement weight dropped)."""</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">adjacency</span><span class="p">(</span><span class="n">weighted</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">tocsr</span><span class="p">()</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">adjacency</span><span class="p">(</span><span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">tocsr</span><span class="p">()</span>  <span class="c1"># signed tie strength</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">nb</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">lo</span><span class="p">:</span><span class="n">hi</span><span class="p">],</span> <span class="n">A</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">lo</span><span class="p">:</span><span class="n">hi</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">lo</span><span class="p">:</span><span class="n">hi</span><span class="p">]]</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">mask</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">((</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pos_k</span><span class="p">),</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">neg_k</span><span class="p">)):</span>
+            <span class="n">ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="n">ids</span><span class="p">])][:</span><span class="n">k</span><span class="p">]:</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nb</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+                <span class="n">edges</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">t</span><span class="p">])))</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">edges</span><span class="p">)]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_congress</span><span class="p">(</span><span class="n">chamber</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">congress</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">detail</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="n">cv</span> <span class="o">=</span> <span class="n">load_congress</span><span class="p">(</span><span class="n">chamber</span><span class="p">,</span> <span class="n">congress</span><span class="p">)</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">votes</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">members</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">party</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">"party"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">major</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">"party"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">ideal_points</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">"nominate_dim1"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
+        <span class="n">ref</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s2">"party_code"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">orient</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ref</span><span class="p">)</span>
+    <span class="n">x1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">project</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"threshold"</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">neg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">min_common</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">adjacency</span><span class="p">()</span>
+    <span class="n">tri</span> <span class="o">=</span> <span class="n">triad_census</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+    <span class="n">fr</span> <span class="o">=</span> <span class="n">balance</span><span class="o">.</span><span class="n">frustration</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"heuristic"</span><span class="p">,</span> <span class="n">restarts</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">camps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">fr</span><span class="o">.</span><span class="n">partition</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">)</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">polarized_communities</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+    <span class="n">major_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">party</span><span class="p">,</span> <span class="n">major</span><span class="p">)</span>
+    <span class="n">two_party</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">major_mask</span><span class="p">,</span> <span class="n">party</span><span class="p">,</span> <span class="s2">"Other"</span><span class="p">)</span>
+
+    <span class="n">sep_ours</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">group_separation</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">party</span><span class="p">,</span> <span class="o">*</span><span class="n">major</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">major</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="n">nom</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="s2">"nominate_dim1"</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">sep_nom</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">group_separation</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">party</span><span class="p">,</span> <span class="o">*</span><span class="n">major</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">major</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="n">agree</span> <span class="o">=</span> <span class="n">agreement_summary</span><span class="p">(</span><span class="n">bg</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">two_party</span><span class="p">)</span>
+    <span class="n">party_stats</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">camp_statistics</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">two_party</span><span class="p">)</span>
+    <span class="n">ok</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">nom</span><span class="p">)</span>
+    <span class="n">y0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">congress_years</span><span class="p">(</span><span class="n">congress</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"congress"</span><span class="p">:</span> <span class="n">congress</span><span class="p">,</span>
+        <span class="s2">"chamber"</span><span class="p">:</span> <span class="n">chamber</span><span class="p">,</span>
+        <span class="s2">"start_year"</span><span class="p">:</span> <span class="n">y0</span><span class="p">,</span>
+        <span class="s2">"end_year"</span><span class="p">:</span> <span class="n">y1</span><span class="p">,</span>
+        <span class="s2">"members"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">),</span>
+        <span class="s2">"rollcalls"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">bg</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="s2">"parties"</span><span class="p">:</span> <span class="n">major</span><span class="p">,</span>
+        <span class="s2">"party_sizes"</span><span class="p">:</span> <span class="p">[</span><span class="nb">int</span><span class="p">((</span><span class="n">party</span> <span class="o">==</span> <span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">major</span><span class="p">],</span>
+        <span class="s2">"ties"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">nnz</span> <span class="o">//</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="s2">"negative_ratio"</span><span class="p">:</span> <span class="n">_f</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">data</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="k">if</span> <span class="n">A</span><span class="o">.</span><span class="n">nnz</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"triangle_balance"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">tri</span><span class="p">[</span><span class="s2">"balanced_ratio"</span><span class="p">]),</span>
+        <span class="s2">"frustration_ratio"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">fr</span><span class="o">.</span><span class="n">ratio</span><span class="p">),</span>
+        <span class="s2">"algebraic_conflict"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">balance</span><span class="o">.</span><span class="n">algebraic_conflict</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span>
+        <span class="s2">"walk_balance"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">balance</span><span class="o">.</span><span class="n">walk_balance</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)),</span>
+        <span class="s2">"polarity"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">polarity</span><span class="p">),</span>
+        <span class="s2">"polarity_norm"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">polarity</span> <span class="o">/</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+        <span class="s2">"party_contrast"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">party_stats</span><span class="p">[</span><span class="s2">"contrast"</span><span class="p">]),</span>
+        <span class="s2">"polarity_coverage"</span><span class="p">:</span> <span class="n">_f</span><span class="p">((</span><span class="n">pc</span><span class="o">.</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+        <span class="s2">"party_modularity"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">polarization</span><span class="o">.</span><span class="n">signed_modularity</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">two_party</span><span class="p">)),</span>
+        <span class="s2">"party_gap"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">party_stats</span><span class="p">[</span><span class="s2">"gap"</span><span class="p">]),</span>
+        <span class="s2">"camp_party_ari"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">polarization</span><span class="o">.</span><span class="n">adjusted_rand</span><span class="p">(</span><span class="n">party</span><span class="p">[</span><span class="n">major_mask</span><span class="p">],</span> <span class="n">camps</span><span class="p">[</span><span class="n">major_mask</span><span class="p">])),</span>
+        <span class="s2">"rwc"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">polarization</span><span class="o">.</span><span class="n">random_walk_controversy</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">two_party</span><span class="p">,</span> <span class="n">camps</span><span class="o">=</span><span class="n">major</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">major</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"mean_agreement"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">agree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"mean_agreement"</span><span class="p">)),</span>
+        <span class="s2">"within_agreement"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">agree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"within_agreement"</span><span class="p">)),</span>
+        <span class="s2">"between_agreement"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">agree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"between_agreement"</span><span class="p">)),</span>
+        <span class="s2">"bimodality"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">polarization</span><span class="o">.</span><span class="n">bimodality_coefficient</span><span class="p">(</span><span class="n">x1</span><span class="p">)),</span>
+        <span class="s2">"party_distance"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">sep_ours</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"distance"</span><span class="p">)),</span>
+        <span class="s2">"party_cohen_d"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">sep_ours</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cohen_d"</span><span class="p">)),</span>
+        <span class="s2">"party_overlap"</span><span class="p">:</span> <span class="n">sep_ours</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"overlap"</span><span class="p">),</span>
+        <span class="s2">"nominate_distance"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">sep_nom</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"distance"</span><span class="p">)),</span>
+        <span class="s2">"nominate_overlap"</span><span class="p">:</span> <span class="n">sep_nom</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"overlap"</span><span class="p">),</span>
+        <span class="s2">"nominate_correlation"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x1</span><span class="p">[</span><span class="n">ok</span><span class="p">],</span> <span class="n">nom</span><span class="p">[</span><span class="n">ok</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">ok</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"esteban_ray"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">polarization</span><span class="o">.</span><span class="n">esteban_ray</span><span class="p">(</span><span class="n">x1</span><span class="p">[</span><span class="n">major_mask</span><span class="p">],</span> <span class="n">party</span><span class="p">[</span><span class="n">major_mask</span><span class="p">])),</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">detail</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"summary"</span><span class="p">:</span> <span class="n">summary</span><span class="p">}</span>
+
+    <span class="n">members</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"id"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">icpsr</span><span class="p">),</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">bioname</span><span class="p">),</span>
+            <span class="s2">"party"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">party</span><span class="p">),</span>
+            <span class="s2">"state"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">state_abbrev</span><span class="p">),</span>
+            <span class="s2">"x"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]),</span>
+            <span class="s2">"y"</span><span class="p">:</span> <span class="n">_f</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>
+            <span class="s2">"nominate"</span><span class="p">:</span> <span class="p">[</span><span class="n">_f</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">nominate_dim1</span><span class="p">),</span> <span class="n">_f</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">nominate_dim2</span><span class="p">)],</span>
+            <span class="s2">"camp"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">fr</span><span class="o">.</span><span class="n">partition</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="s2">"polarized"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">itertuples</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+    <span class="p">]</span>
+    <span class="n">scores</span> <span class="o">=</span> <span class="n">polarization</span><span class="o">.</span><span class="n">node_scores</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">two_party</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">rec</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">scores</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()):</span>
+        <span class="n">rec</span><span class="p">[</span><span class="s2">"bridging"</span><span class="p">]</span> <span class="o">=</span> <span class="n">_f</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"bridging"</span><span class="p">])</span>
+        <span class="n">rec</span><span class="p">[</span><span class="s2">"degree"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">"degree"</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"summary"</span><span class="p">:</span> <span class="n">summary</span><span class="p">,</span> <span class="s2">"members"</span><span class="p">:</span> <span class="n">members</span><span class="p">,</span> <span class="s2">"edges"</span><span class="p">:</span> <span class="n">_network_sample</span><span class="p">(</span><span class="n">g</span><span class="p">)}</span>
+
+
+<div class="viewcode-block" id="build_series">
+<a class="viewcode-back" href="../../api.html#signlens.congress.build_series">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_series</span><span class="p">(</span>
+    <span class="n">out_dir</span><span class="p">,</span>
+    <span class="n">chambers</span><span class="o">=</span><span class="p">(</span><span class="s2">"H"</span><span class="p">,</span> <span class="s2">"S"</span><span class="p">),</span>
+    <span class="n">congresses</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">detail</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">skip_existing</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Analyse many Congresses and write JSON files to ``out_dir``.</span>
+
+<span class="sd">    Files: ``{chamber}{congress:03d}.json`` (members, network, summary) and</span>
+<span class="sd">    ``series_{chamber}.json`` (one summary row per Congress).</span>
+<span class="sd">    """</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">congresses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">congresses</span> <span class="ow">or</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">LATEST_CONGRESS</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">frames</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">chambers</span><span class="p">:</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">congresses</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">out</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">ch</span><span class="si">}{</span><span class="n">c</span><span class="si">:</span><span class="s2">03d</span><span class="si">}</span><span class="s2">.json"</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">skip_existing</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">res</span> <span class="o">=</span> <span class="n">analyze_congress</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="n">detail</span><span class="p">)</span>
+                    <span class="n">path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">separators</span><span class="o">=</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">":"</span><span class="p">)))</span>
+                <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s2">"summary"</span><span class="p">])</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> done"</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>  <span class="c1"># keep going; old congresses can be sparse</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> </span><span class="si">%d</span><span class="s2"> failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">ch</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">exc</span><span class="p">)</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="s2">"congress"</span><span class="p">])</span>
+        <span class="p">(</span><span class="n">out</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"series_</span><span class="si">{</span><span class="n">ch</span><span class="si">}</span><span class="s2">.json"</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">separators</span><span class="o">=</span><span class="p">(</span><span class="s2">","</span><span class="p">,</span> <span class="s2">":"</span><span class="p">)))</span>
+        <span class="n">frames</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">frames</span></div>
+
+</code></pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2021, junjiehuang.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
