@@ -48,11 +48,11 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
-import sign_lens
+import signlens
 # The short X.Y version.
-version = sign_lens.__version__
+version = signlens.__version__
 # The full version, including alpha/beta/rc tags.
-release = sign_lens.__version__
+release = signlens.__version__
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

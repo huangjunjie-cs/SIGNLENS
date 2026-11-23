@@ -1,0 +1,116 @@
+@import 'tailwindcss';
+@import 'katex/dist/katex.min.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-display: 'Fraunces', 'Songti SC', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* surfaces */
+  --color-ink-950: #07090f;
+  --color-ink-900: #0b0f17;
+  --color-ink-850: #0f1420;
+  --color-ink-800: #141b2a;
+  --color-ink-700: #1d2638;
+  --color-ink-600: #2a3550;
+  --color-ink-500: #3c4a6b;
+
+  /* text */
+  --color-fg: #e8ecf4;
+  --color-fg-muted: #a3adc2;
+  --color-fg-subtle: #6f7a93;
+
+  /* semantic data colours (see src/lib/colors.ts) */
+  --color-camp-a: #4f8ef7;
+  --color-camp-b: #f59e42;
+  --color-pos: #9fb3d1;
+  --color-neg: #f0506e;
+  --color-accent: #8b7cf6;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink-900 text-fg font-sans antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-accent) 45%, transparent);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.glow-a {
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--color-camp-a) 28%, transparent), transparent);
+}
+.glow-b {
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--color-camp-b) 24%, transparent), transparent);
+}
+
+@utility card {
+  @apply rounded-2xl border border-white/[0.07] bg-ink-850/80 backdrop-blur-sm;
+}
+
+@utility label {
+  @apply text-[11px] font-medium uppercase tracking-[0.14em] text-fg-subtle;
+}
+
+@utility btn {
+  @apply inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition
+    disabled:cursor-not-allowed disabled:opacity-40;
+}
+@utility btn-primary {
+  @apply btn bg-accent text-white hover:brightness-110 shadow-[0_0_0_1px_rgb(255_255_255/0.08)_inset];
+}
+@utility btn-ghost {
+  @apply btn border border-white/10 text-fg-muted hover:text-fg hover:border-white/20 hover:bg-white/[0.03];
+}
+
+@utility input {
+  @apply w-full rounded-lg border border-white/10 bg-ink-900 px-3 py-2 text-sm text-fg
+    placeholder:text-fg-subtle focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* charts */
+.axis text {
+  fill: var(--color-fg-subtle);
+  font-size: 11px;
+  font-family: var(--font-sans);
+}
+.axis path,
+.axis line {
+  stroke: rgb(255 255 255 / 0.12);
+}
+.gridline line {
+  stroke: rgb(255 255 255 / 0.06);
+}
+.gridline path {
+  display: none;
+}
+
+input[type='range'] {
+  accent-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

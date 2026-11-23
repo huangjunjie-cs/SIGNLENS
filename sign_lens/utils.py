@@ -1,9 +1,15 @@
 
 import os
+from collections import defaultdict
+
 import numpy as np
 import scipy.sparse as sp
-from collections import defaultdict
-from tqdm import tqdm
+
+try:
+    from tqdm import tqdm
+except ImportError:  # optional
+    def tqdm(x, *a, **k):
+        return x
 
 
 class SignedTriadFeaExtra:
@@ -21,7 +27,7 @@ class SignedTriadFeaExtra:
         pos_in_edgelists = defaultdict(list)
         neg_in_edgelists = defaultdict(list)
         with open(edgelist_fpath) as f:
-            for line in f.readlines():
+            for line in f:
                 x, y, z = line.split(self.seperator)
                 x = int(x)
                 y = int(y)
@@ -364,7 +370,7 @@ class SignedBipartiteFeaExtraByMatrace:
         node_set1 = {}
         node_set2 = {}
         with open(edgelist_fpath) as f:
-            for line in f.readlines():
+            for line in f:
                 x, y, z = line.strip().split(self.seperator)
                 if x not in node_set1:
                     node_set1[x] = len(node_set1)
